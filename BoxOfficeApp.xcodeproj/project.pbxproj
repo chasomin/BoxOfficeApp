@@ -24,6 +24,7 @@
 		7960C27E2BBFEE86009D1B6A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960C27D2BBFEE86009D1B6A /* Movie.swift */; };
 		7960C2802BBFF12D009D1B6A /* BoxOfficeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960C27F2BBFF12D009D1B6A /* BoxOfficeNetwork.swift */; };
 		7960C2822BBFF1AE009D1B6A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7960C2812BBFF1AE009D1B6A /* .gitignore */; };
+		7960C2842BBFF221009D1B6A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960C2832BBFF221009D1B6A /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		7960C27D2BBFEE86009D1B6A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		7960C27F2BBFF12D009D1B6A /* BoxOfficeNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeNetwork.swift; sourceTree = "<group>"; };
 		7960C2812BBFF1AE009D1B6A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7960C2832BBFF221009D1B6A /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				7960C27D2BBFEE86009D1B6A /* Movie.swift */,
 				7960C27F2BBFF12D009D1B6A /* BoxOfficeNetwork.swift */,
+				7960C2832BBFF221009D1B6A /* APIKey.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				7960C2782BBFECAB009D1B6A /* CommonViewControllerProtocol.swift in Sources */,
 				7960C26C2BBFE6F3009D1B6A /* MovieCollectionViewCell.swift in Sources */,
 				7960C26A2BBFE6E9009D1B6A /* MovieTableViewCell.swift in Sources */,
+				7960C2842BBFF221009D1B6A /* APIKey.swift in Sources */,
 				7960C2802BBFF12D009D1B6A /* BoxOfficeNetwork.swift in Sources */,
 				7960C2682BBFE388009D1B6A /* MovieViewController.swift in Sources */,
 				7960C2762BBFEA46009D1B6A /* MovieViewModel.swift in Sources */,
