@@ -49,6 +49,16 @@ final class MovieViewController: UIViewController, CommonViewController {
                 cell.titleLabel.text = "\(element)"
             }
             .disposed(by: disposeBag)
+        
+        output.error
+            .debug()
+            .asDriver(onErrorJustReturn: APIError.unknownResponse)
+        // catch로 error 전달받는데 bind로 받으니까 메인쓰레드 아니라고 오류남⚠️ -> 100% Main 보장인 drive로 변경해서 해결
+        //, 아니먄 viewModel에서 구독할 때 observe(on:), subscribe(on:)로 메인쓰레드 지정
+            .drive(with: self) { owner, _ in
+                owner.showToast()
+            }
+            .disposed(by: disposeBag)
     }
 }
 
