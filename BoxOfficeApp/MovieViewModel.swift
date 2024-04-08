@@ -38,24 +38,24 @@ final class MovieViewModel: CommonViewModel {
             .map {
                 String($0)
             }
-            .flatMap{ value in
-                BoxOfficeNetwork.fetchBoxOffice(date: value)
-                    .catch { error in
-                        movieError.onNext(error)
-                        return Observable<Movie>.never()
-                    }
+            .flatMap { value in
+//                BoxOfficeNetwork.fetchBoxOffice(date: value)
+//                    .catch { error in
+//                        movieError.onNext(error)
+//                        return Observable<Movie>.never()
+//                    }
+                BoxOfficeNetwork.fetchBoxOfficeSingleResult(date: value)
             }
             .debug()
-            .subscribe(onNext: { movie in
-                let data = movie.boxOfficeResult.dailyBoxOfficeList
-                movieList.onNext(data)
+            .subscribe(onNext: { result in
                 print("==== Transform Next")
-            }, onError: { error in
-                print("==== Transform Error")
-            }, onCompleted: {
-                print("==== Transform Completed")
-            }, onDisposed: {
-                print("==== Transform Disposed")
+                switch result {
+                case .success(let movie):
+                    let data = movie.boxOfficeResult.dailyBoxOfficeList
+                    movieList.onNext(data)
+                case .failure(let error):
+                    movieError.onNext(error)
+                }
             })
             .disposed(by: disposeBag)
         
