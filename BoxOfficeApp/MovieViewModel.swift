@@ -21,11 +21,13 @@ final class MovieViewModel: CommonViewModel {
     struct Output {
         let movie: PublishSubject<[DailyBoxOfficeList]>
         let selectItem: BehaviorRelay<[String]>
+        let error: PublishSubject<Error>
     }
     
     func transform(input: Input) -> Output {
         let movieList = PublishSubject<[DailyBoxOfficeList]>()
         let selectItem: BehaviorRelay<[String]> = BehaviorRelay(value: [])
+        let movieError =  PublishSubject<Error>()
         
         input.searchButtonTap
             .withLatestFrom(input.searchText.orEmpty)
@@ -38,11 +40,17 @@ final class MovieViewModel: CommonViewModel {
             }
             .flatMap{ value in
                 BoxOfficeNetwork.fetchBoxOffice(date: value)
+                    .catch { error in
+                        movieError.onNext(error)
+                        return Observable<Movie>.never()
+                    }
             }
+            .debug()
             .subscribe(onNext: { movie in
                 let data = movie.boxOfficeResult.dailyBoxOfficeList
                 movieList.onNext(data)
-            }, onError: { _ in
+                print("==== Transform Next")
+            }, onError: { error in
                 print("==== Transform Error")
             }, onCompleted: {
                 print("==== Transform Completed")
@@ -60,7 +68,7 @@ final class MovieViewModel: CommonViewModel {
             .disposed(by: disposeBag)
         
         
-        return Output.init(movie: movieList, selectItem: selectItem)
+        return Output.init(movie: movieList, selectItem: selectItem, error: movieError)
     }
     
 }
@@ -74,3 +82,5 @@ extension Date {
         return Int(result) ?? 0
     }
 }
+
+
