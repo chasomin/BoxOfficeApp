@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79553AFE2BC426F3000B4E4B /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 79553AFD2BC426F3000B4E4B /* Toast */; };
+		79553B002BC427B4000B4E4B /* Toast+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79553AFF2BC427B4000B4E4B /* Toast+extension.swift */; };
 		7960C2542BBFE26A009D1B6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960C2532BBFE26A009D1B6A /* AppDelegate.swift */; };
 		7960C2562BBFE26A009D1B6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7960C2552BBFE26A009D1B6A /* SceneDelegate.swift */; };
 		7960C25B2BBFE26A009D1B6A /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7960C25A2BBFE26A009D1B6A /* Base */; };
@@ -28,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79553AFF2BC427B4000B4E4B /* Toast+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Toast+extension.swift"; sourceTree = "<group>"; };
 		7960C2502BBFE26A009D1B6A /* BoxOfficeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoxOfficeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7960C2532BBFE26A009D1B6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7960C2552BBFE26A009D1B6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79553AFE2BC426F3000B4E4B /* Toast in Frameworks */,
 				7960C2742BBFE8FE009D1B6A /* SnapKit in Frameworks */,
 				7960C2712BBFE8F3009D1B6A /* RxSwift in Frameworks */,
 				7960C26F2BBFE8F3009D1B6A /* RxCocoa in Frameworks */,
@@ -86,6 +90,7 @@
 				7960C2752BBFEA46009D1B6A /* MovieViewModel.swift */,
 				7960C2692BBFE6E9009D1B6A /* MovieTableViewCell.swift */,
 				7960C26B2BBFE6F3009D1B6A /* MovieCollectionViewCell.swift */,
+				79553AFF2BC427B4000B4E4B /* Toast+extension.swift */,
 				7960C27C2BBFEE7A009D1B6A /* Network */,
 				7960C2792BBFECAF009D1B6A /* Protocol */,
 				7960C2592BBFE26A009D1B6A /* Main.storyboard */,
@@ -136,6 +141,7 @@
 				7960C26E2BBFE8F3009D1B6A /* RxCocoa */,
 				7960C2702BBFE8F3009D1B6A /* RxSwift */,
 				7960C2732BBFE8FE009D1B6A /* SnapKit */,
+				79553AFD2BC426F3000B4E4B /* Toast */,
 			);
 			productName = BoxOfficeApp;
 			productReference = 7960C2502BBFE26A009D1B6A /* BoxOfficeApp.app */;
@@ -168,6 +174,7 @@
 			packageReferences = (
 				7960C26D2BBFE8F3009D1B6A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				7960C2722BBFE8FE009D1B6A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				79553AFC2BC426F3000B4E4B /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 7960C2512BBFE26A009D1B6A /* Products */;
 			projectDirPath = "";
@@ -208,6 +215,7 @@
 				7960C2682BBFE388009D1B6A /* MovieViewController.swift in Sources */,
 				7960C2762BBFEA46009D1B6A /* MovieViewModel.swift in Sources */,
 				7960C27B2BBFECC4009D1B6A /* CommonViewModelProtocol.swift in Sources */,
+				79553B002BC427B4000B4E4B /* Toast+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +450,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		79553AFC2BC426F3000B4E4B /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		7960C26D2BBFE8F3009D1B6A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -461,6 +477,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		79553AFD2BC426F3000B4E4B /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79553AFC2BC426F3000B4E4B /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
 		7960C26E2BBFE8F3009D1B6A /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7960C26D2BBFE8F3009D1B6A /* XCRemoteSwiftPackageReference "RxSwift" */;
